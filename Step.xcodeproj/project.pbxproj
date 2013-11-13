@@ -27,9 +27,19 @@
 		FC1A3E2318301CE2003CC8E7 /* StepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E2218301CE2003CC8E7 /* StepTests.m */; };
 		FC1A3E371830BA28003CC8E7 /* StepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E361830BA28003CC8E7 /* StepCell.m */; };
 		FC1A3E3A1830BA31003CC8E7 /* GoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E391830BA31003CC8E7 /* GoalCell.m */; };
-		FC1A3E3D1830D1E1003CC8E7 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E3C1830D1E1003CC8E7 /* Goal.m */; };
 		FC1A3E401830D1E2003CC8E7 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E3F1830D1E2003CC8E7 /* Step.m */; };
 		FC1A3E4318316495003CC8E7 /* UIColor+RaftColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E4218316495003CC8E7 /* UIColor+RaftColors.m */; };
+		FC33BD1F1833644E00678CFE /* NewGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33BD1E1833644E00678CFE /* NewGoalViewController.m */; };
+		FCD83E9F1833177F00A689A6 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83E9E1833177F00A689A6 /* GoalsViewController.m */; };
+		FCD83EA21833187100A689A6 /* GoalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EA11833187100A689A6 /* GoalCollectionViewCell.m */; };
+		FCD83EAF183323EA00A689A6 /* MZAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EA4183323EA00A689A6 /* MZAppearance.m */; };
+		FCD83EB0183323EA00A689A6 /* NSInvocation+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EA6183323EA00A689A6 /* NSInvocation+Copy.m */; };
+		FCD83EB1183323EA00A689A6 /* MZFormSheetBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EA8183323EA00A689A6 /* MZFormSheetBackgroundWindow.m */; };
+		FCD83EB2183323EA00A689A6 /* MZFormSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EAA183323EA00A689A6 /* MZFormSheetController.m */; };
+		FCD83EB3183323EA00A689A6 /* MZFormSheetSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EAC183323EA00A689A6 /* MZFormSheetSegue.m */; };
+		FCD83EB4183323EA00A689A6 /* UIImage+Additional.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EAE183323EA00A689A6 /* UIImage+Additional.m */; };
+		FCD83EB81833249000A689A6 /* NewStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EB71833249000A689A6 /* NewStepViewController.m */; };
+		FCD83EBC18332DD200A689A6 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD83EBB18332DD200A689A6 /* Goal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +80,33 @@
 		FC1A3E361830BA28003CC8E7 /* StepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepCell.m; sourceTree = "<group>"; };
 		FC1A3E381830BA31003CC8E7 /* GoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalCell.h; sourceTree = "<group>"; };
 		FC1A3E391830BA31003CC8E7 /* GoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalCell.m; sourceTree = "<group>"; };
-		FC1A3E3B1830D1E1003CC8E7 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
-		FC1A3E3C1830D1E1003CC8E7 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 		FC1A3E3E1830D1E2003CC8E7 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		FC1A3E3F1830D1E2003CC8E7 /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		FC1A3E4118316495003CC8E7 /* UIColor+RaftColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RaftColors.h"; sourceTree = "<group>"; };
 		FC1A3E4218316495003CC8E7 /* UIColor+RaftColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RaftColors.m"; sourceTree = "<group>"; };
+		FC33BD1D1833644E00678CFE /* NewGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGoalViewController.h; sourceTree = "<group>"; };
+		FC33BD1E1833644E00678CFE /* NewGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoalViewController.m; sourceTree = "<group>"; };
+		FCD83E9D1833177F00A689A6 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
+		FCD83E9E1833177F00A689A6 /* GoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsViewController.m; sourceTree = "<group>"; };
+		FCD83EA01833187100A689A6 /* GoalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalCollectionViewCell.h; sourceTree = "<group>"; };
+		FCD83EA11833187100A689A6 /* GoalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalCollectionViewCell.m; sourceTree = "<group>"; };
+		FCD83EA3183323EA00A689A6 /* MZAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZAppearance.h; sourceTree = "<group>"; };
+		FCD83EA4183323EA00A689A6 /* MZAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZAppearance.m; sourceTree = "<group>"; };
+		FCD83EA5183323EA00A689A6 /* NSInvocation+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Copy.h"; sourceTree = "<group>"; };
+		FCD83EA6183323EA00A689A6 /* NSInvocation+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Copy.m"; sourceTree = "<group>"; };
+		FCD83EA7183323EA00A689A6 /* MZFormSheetBackgroundWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetBackgroundWindow.h; sourceTree = "<group>"; };
+		FCD83EA8183323EA00A689A6 /* MZFormSheetBackgroundWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetBackgroundWindow.m; sourceTree = "<group>"; };
+		FCD83EA9183323EA00A689A6 /* MZFormSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetController.h; sourceTree = "<group>"; };
+		FCD83EAA183323EA00A689A6 /* MZFormSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetController.m; sourceTree = "<group>"; };
+		FCD83EAB183323EA00A689A6 /* MZFormSheetSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetSegue.h; sourceTree = "<group>"; };
+		FCD83EAC183323EA00A689A6 /* MZFormSheetSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetSegue.m; sourceTree = "<group>"; };
+		FCD83EAD183323EA00A689A6 /* UIImage+Additional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additional.h"; sourceTree = "<group>"; };
+		FCD83EAE183323EA00A689A6 /* UIImage+Additional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additional.m"; sourceTree = "<group>"; };
+		FCD83EB61833249000A689A6 /* NewStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStepViewController.h; sourceTree = "<group>"; };
+		FCD83EB71833249000A689A6 /* NewStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStepViewController.m; sourceTree = "<group>"; };
+		FCD83EB918332DA100A689A6 /* Step 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Step 2.xcdatamodel"; sourceTree = "<group>"; };
+		FCD83EBA18332DD200A689A6 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		FCD83EBB18332DD200A689A6 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +169,18 @@
 		FC1A3DF618301CE2003CC8E7 /* Step */ = {
 			isa = PBXGroup;
 			children = (
+				FCD83EB5183323F000A689A6 /* MZFormSheetController */,
 				FC1A3DFF18301CE2003CC8E7 /* StepAppDelegate.h */,
 				FC1A3E0018301CE2003CC8E7 /* StepAppDelegate.m */,
 				FC1A3E0218301CE2003CC8E7 /* Main.storyboard */,
+				FCD83E9D1833177F00A689A6 /* GoalsViewController.h */,
+				FCD83E9E1833177F00A689A6 /* GoalsViewController.m */,
+				FCD83EA01833187100A689A6 /* GoalCollectionViewCell.h */,
+				FCD83EA11833187100A689A6 /* GoalCollectionViewCell.m */,
+				FCD83EB61833249000A689A6 /* NewStepViewController.h */,
+				FCD83EB71833249000A689A6 /* NewStepViewController.m */,
+				FC33BD1D1833644E00678CFE /* NewGoalViewController.h */,
+				FC33BD1E1833644E00678CFE /* NewGoalViewController.m */,
 				FC1A3E0818301CE2003CC8E7 /* StepMasterViewController.h */,
 				FC1A3E0918301CE2003CC8E7 /* StepMasterViewController.m */,
 				FC1A3E0B18301CE2003CC8E7 /* StepDetailViewController.h */,
@@ -153,10 +193,10 @@
 				FC1A3E4118316495003CC8E7 /* UIColor+RaftColors.h */,
 				FC1A3E4218316495003CC8E7 /* UIColor+RaftColors.m */,
 				FC1A3E0518301CE2003CC8E7 /* Step.xcdatamodeld */,
+				FCD83EBA18332DD200A689A6 /* Goal.h */,
+				FCD83EBB18332DD200A689A6 /* Goal.m */,
 				FC1A3E3E1830D1E2003CC8E7 /* Step.h */,
 				FC1A3E3F1830D1E2003CC8E7 /* Step.m */,
-				FC1A3E3B1830D1E1003CC8E7 /* Goal.h */,
-				FC1A3E3C1830D1E1003CC8E7 /* Goal.m */,
 				FC1A3DF718301CE2003CC8E7 /* Supporting Files */,
 			);
 			path = Step;
@@ -189,6 +229,25 @@
 				FC1A3E1F18301CE2003CC8E7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCD83EB5183323F000A689A6 /* MZFormSheetController */ = {
+			isa = PBXGroup;
+			children = (
+				FCD83EA3183323EA00A689A6 /* MZAppearance.h */,
+				FCD83EA4183323EA00A689A6 /* MZAppearance.m */,
+				FCD83EA5183323EA00A689A6 /* NSInvocation+Copy.h */,
+				FCD83EA6183323EA00A689A6 /* NSInvocation+Copy.m */,
+				FCD83EA7183323EA00A689A6 /* MZFormSheetBackgroundWindow.h */,
+				FCD83EA8183323EA00A689A6 /* MZFormSheetBackgroundWindow.m */,
+				FCD83EA9183323EA00A689A6 /* MZFormSheetController.h */,
+				FCD83EAA183323EA00A689A6 /* MZFormSheetController.m */,
+				FCD83EAB183323EA00A689A6 /* MZFormSheetSegue.h */,
+				FCD83EAC183323EA00A689A6 /* MZFormSheetSegue.m */,
+				FCD83EAD183323EA00A689A6 /* UIImage+Additional.h */,
+				FCD83EAE183323EA00A689A6 /* UIImage+Additional.m */,
+			);
+			name = MZFormSheetController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,16 +348,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC1A3E3D1830D1E1003CC8E7 /* Goal.m in Sources */,
+				FCD83EAF183323EA00A689A6 /* MZAppearance.m in Sources */,
+				FCD83EB4183323EA00A689A6 /* UIImage+Additional.m in Sources */,
 				FC1A3E401830D1E2003CC8E7 /* Step.m in Sources */,
+				FCD83EBC18332DD200A689A6 /* Goal.m in Sources */,
 				FC1A3E4318316495003CC8E7 /* UIColor+RaftColors.m in Sources */,
 				FC1A3E0A18301CE2003CC8E7 /* StepMasterViewController.m in Sources */,
+				FCD83EB1183323EA00A689A6 /* MZFormSheetBackgroundWindow.m in Sources */,
 				FC1A3E371830BA28003CC8E7 /* StepCell.m in Sources */,
 				FC1A3E0118301CE2003CC8E7 /* StepAppDelegate.m in Sources */,
 				FC1A3DFD18301CE2003CC8E7 /* main.m in Sources */,
 				FC1A3E0D18301CE2003CC8E7 /* StepDetailViewController.m in Sources */,
+				FCD83EB2183323EA00A689A6 /* MZFormSheetController.m in Sources */,
 				FC1A3E3A1830BA31003CC8E7 /* GoalCell.m in Sources */,
+				FCD83EB81833249000A689A6 /* NewStepViewController.m in Sources */,
+				FCD83EB3183323EA00A689A6 /* MZFormSheetSegue.m in Sources */,
+				FCD83EA21833187100A689A6 /* GoalCollectionViewCell.m in Sources */,
+				FCD83E9F1833177F00A689A6 /* GoalsViewController.m in Sources */,
 				FC1A3E0718301CE2003CC8E7 /* Step.xcdatamodeld in Sources */,
+				FC33BD1F1833644E00678CFE /* NewGoalViewController.m in Sources */,
+				FCD83EB0183323EA00A689A6 /* NSInvocation+Copy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +576,7 @@
 				FC1A3E2818301CE2003CC8E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC1A3E2918301CE2003CC8E7 /* Build configuration list for PBXNativeTarget "StepTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +585,7 @@
 				FC1A3E2B18301CE2003CC8E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -522,9 +593,10 @@
 		FC1A3E0518301CE2003CC8E7 /* Step.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FCD83EB918332DA100A689A6 /* Step 2.xcdatamodel */,
 				FC1A3E0618301CE2003CC8E7 /* Step.xcdatamodel */,
 			);
-			currentVersion = FC1A3E0618301CE2003CC8E7 /* Step.xcdatamodel */;
+			currentVersion = FCD83EB918332DA100A689A6 /* Step 2.xcdatamodel */;
 			path = Step.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

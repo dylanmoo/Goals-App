@@ -11,13 +11,110 @@
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1on-ly-cfA">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="RxB-wf-QIq"/>
+                        <segue destination="eIr-3a-JDr" kind="relationship" relationship="rootViewController" id="isk-AU-bDG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="-631"/>
+        </scene>
+        <!--Goals View Controller - Goals-->
+        <scene sceneID="YDG-j1-qJC">
+            <objects>
+                <viewController storyboardIdentifier="goalsViewController" id="eIr-3a-JDr" customClass="GoalsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GKS-YK-VrG"/>
+                        <viewControllerLayoutGuide type="bottom" id="55d-OY-hSe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HFT-hM-bTf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-Zw-QP9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.87815326660000004" green="0.90831044490000001" blue="0.94046954719999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MDT-iP-kvK">
+                                    <size key="itemSize" width="320" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="10"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="GoalCell" reuseIdentifier="GoalCell" id="7MO-w1-T8V" customClass="GoalCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2V-bY-txf">
+                                                    <rect key="frame" x="288" y="5" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <connections>
+                                                        <action selector="menuButtonPressed:" destination="7MO-w1-T8V" eventType="touchUpInside" id="j2z-sk-dPT"/>
+                                                    </connections>
+                                                </button>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GL-9N-Ypa">
+                                                    <rect key="frame" x="0.0" y="30" width="320" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="eIr-3a-JDr" id="RP0-B4-BrB"/>
+                                                    </connections>
+                                                </scrollView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What will you accomplish?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-jN-wo1">
+                                                    <rect key="frame" x="20" y="1" width="260" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="eIr-3a-JDr" id="L7z-yW-q7L"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="goalTextField" destination="cgO-jN-wo1" id="P47-XX-bnr"/>
+                                            <outlet property="menuButton" destination="L2V-bY-txf" id="s0g-Uv-4qP"/>
+                                            <outlet property="stepScrollView" destination="0GL-9N-Ypa" id="Wv3-pH-4Se"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SM6-80-BqR">
+                                    <rect key="frame" x="0.0" y="164" width="320" height="10"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="eIr-3a-JDr" id="Tqg-DX-1Ks"/>
+                                    <outlet property="delegate" destination="eIr-3a-JDr" id="RJ6-hw-5Y8"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Goals" id="ysc-PF-Tua">
+                        <barButtonItem key="leftBarButtonItem" title="New Goal" id="N24-bA-pUs">
+                            <connections>
+                                <action selector="newGoalPressed:" destination="eIr-3a-JDr" id="A9A-UY-BnE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalCollectionView" destination="mN9-Zw-QP9" id="Y5B-oi-j6V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ut6-7X-rW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="-624"/>
         </scene>
         <!--Step Master View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -29,7 +126,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoalCell" rowHeight="94" id="m0d-ak-lc9" customClass="GoalCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="94"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="HfR-re-gZL">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
@@ -90,7 +187,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" rowHeight="94" id="jaO-IT-JYR" customClass="StepCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="94"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jaO-IT-JYR" id="ANg-7C-0cH">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
@@ -138,6 +235,196 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="799"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dfW-7Y-SpE">
+            <objects>
+                <navigationController storyboardIdentifier="newStep" automaticallyAdjustsScrollViewInsets="NO" id="dVd-f8-S5V" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cda-JF-3yp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SGp-CK-S0M">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ggX-xm-OgN" kind="relationship" relationship="rootViewController" id="QrK-xM-vVF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILu-nB-ekO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="70"/>
+        </scene>
+        <!--New Step View Controller - What Step will you take?-->
+        <scene sceneID="3Sv-Kh-iEz">
+            <objects>
+                <viewController storyboardIdentifier="stepController" id="ggX-xm-OgN" customClass="NewStepViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lQK-H3-dlf"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRC-DO-m3M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yMg-ce-SvP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-Za-I1p">
+                                <rect key="frame" x="0.0" y="64" width="320" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eml-Ev-DDN">
+                                <rect key="frame" x="30" y="178" width="260" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="9kl-jj-bP9"/>
+                                    <constraint firstAttribute="width" constant="260" id="Pkl-8v-s2z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add Step to Goal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newStepButtonPressed:" destination="ggX-xm-OgN" eventType="touchUpInside" id="PKc-AC-eI2"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d5W-e9-5i2">
+                                <rect key="frame" x="20" y="71" width="280" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ggX-xm-OgN" id="AjP-TT-1PM"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Eml-Ev-DDN" secondAttribute="centerX" id="aEi-TY-9Uy"/>
+                            <constraint firstAttribute="centerX" secondItem="ZNl-Za-I1p" secondAttribute="centerX" id="aJj-i8-4Ed"/>
+                            <constraint firstAttribute="centerX" secondItem="d5W-e9-5i2" secondAttribute="centerX" id="cFs-a5-cVJ"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="What Step will you take?" id="GQl-QB-kZO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="fQe-R5-MhH">
+                            <connections>
+                                <action selector="cancelAddStep:" destination="ggX-xm-OgN" id="Frv-JS-RQZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="stepButton" destination="Eml-Ev-DDN" id="wYz-HW-gt6"/>
+                        <outlet property="stepTextView" destination="d5W-e9-5i2" id="Tut-xc-KPq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87i-cN-oPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317" y="70"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sbj-MC-FCi">
+            <objects>
+                <navigationController storyboardIdentifier="newGoal" automaticallyAdjustsScrollViewInsets="NO" id="jcl-KV-uVa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RwQ-8O-hHF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Cd4-oa-Cm6">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="fYu-Ho-8cW" kind="relationship" relationship="rootViewController" id="xBT-a9-boJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WB-Ng-aLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="767"/>
+        </scene>
+        <!--New Goal View Controller - What is your Goal?-->
+        <scene sceneID="6MX-r9-y4w">
+            <objects>
+                <viewController storyboardIdentifier="goalController" id="fYu-Ho-8cW" customClass="NewGoalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aUo-Qw-a1F"/>
+                        <viewControllerLayoutGuide type="bottom" id="jhG-ek-Mch"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ygc-ZA-5yW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzm-th-0sp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-AJ-WpE">
+                                <rect key="frame" x="30" y="178" width="260" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Yk4-SU-KBN"/>
+                                    <constraint firstAttribute="height" constant="48" id="iWV-G8-asY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add Goal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGoalButtonPressed:" destination="fYu-Ho-8cW" eventType="touchUpInside" id="kZR-t2-I5L"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irQ-jH-KGN">
+                                <rect key="frame" x="20" y="71" width="280" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fYu-Ho-8cW" id="xSs-3n-7g1"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="irQ-jH-KGN" secondAttribute="centerX" id="DT9-6c-hPb"/>
+                            <constraint firstAttribute="centerX" secondItem="Zzm-th-0sp" secondAttribute="centerX" id="T6D-yt-Np6"/>
+                            <constraint firstAttribute="centerX" secondItem="t0C-AJ-WpE" secondAttribute="centerX" id="mB6-Qj-gYb"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="What is your Goal?" id="1m3-Nu-6gn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="kfJ-lc-ng0">
+                            <connections>
+                                <action selector="cancelAddGoal:" destination="fYu-Ho-8cW" id="qnx-7e-rcv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalButton" destination="t0C-AJ-WpE" id="AeU-zG-UDI"/>
+                        <outlet property="goalTextView" destination="irQ-jH-KGN" id="hgD-7d-xhf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXs-Bq-09W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317" y="767"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
