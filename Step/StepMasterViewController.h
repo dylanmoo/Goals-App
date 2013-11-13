@@ -10,9 +10,11 @@
 
 #import <CoreData/CoreData.h>
 
-@interface StepMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface StepMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate,UITextViewDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (void)insertNewObject:(id)sender;
 
 @end

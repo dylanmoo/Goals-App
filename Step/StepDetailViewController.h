@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "Goal.h"
+#import "Step.h"
 
-@interface StepDetailViewController : UIViewController
+@interface StepDetailViewController : UITableViewController <NSFetchedResultsControllerDelegate,UITextViewDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Goal *goal;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (void)insertNewObject:(id)sender;
+
 @end

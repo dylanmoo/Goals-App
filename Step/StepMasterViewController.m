@@ -9,9 +9,12 @@
 #import "StepMasterViewController.h"
 
 #import "StepDetailViewController.h"
+#import "Goal.h"
+#import "Step.h"
+#import "GoalCell.h"
 
 @interface StepMasterViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @implementation StepMasterViewController
@@ -27,14 +30,22 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    [self.navigationItem.rightBarButtonItem setAction:@selector(insertNewObject:)];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)newGoalPressed:(id)sender{
+    [self insertNewObject:sender];
 }
 
 - (void)insertNewObject:(id)sender
@@ -45,7 +56,7 @@
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    [newManagedObject setValue:[NSDate date] forKey:@"created_at"];
     
     // Save the context.
     NSError *error = nil;
@@ -72,7 +83,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    GoalCell *cell = (GoalCell*)[tableView dequeueReusableCellWithIdentifier:@"GoalCell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -105,12 +116,18 @@
     return NO;
 }
 
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 94;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        Goal *goal = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setGoal:goal];
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     }
 }
 
@@ -124,14 +141,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Goal" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -188,7 +205,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(GoalCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
@@ -213,10 +230,85 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if([text isEqualToString:@"\n"]){
+        [self textViewDidEndEditing:textView];
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView{
+    if(textView.text){
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    NSLog(@"Return text view");
+    [textView resignFirstResponder];
+    Goal *goal = [self.fetchedResultsController.fetchedObjects objectAtIndex:textView.tag];
+    [goal setName:textView.text];
+    // Save the context.
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+    
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField.text){
+        [textField resignFirstResponder];
+        Goal *goal = [self.fetchedResultsController.fetchedObjects objectAtIndex:textField.tag];
+        [goal setName:textField.text];
+        // Save the context.
+        NSError *error = nil;
+        if (![self.managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+- (void)configureCell:(GoalCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    Goal *goal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell.textField setTag:indexPath.row];
+    cell.textField.layer.cornerRadius = 0;
+    cell.textField.layer.borderColor = self.view.tintColor.CGColor;
+    cell.textField.layer.borderWidth = 2;
+    if(goal.name){
+        if(goal.steps.count>0){
+            NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"completed" ascending:YES];
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"updated_at" ascending:YES];
+            NSArray *sortDescriptors = @[sortDescriptor2,sortDescriptor];
+            NSArray *allSteps = [goal.steps sortedArrayUsingDescriptors:sortDescriptors];
+            Step *firstStep = [allSteps objectAtIndex:0];
+            cell.textField.text = firstStep.name;
+        }else{
+            cell.textField.text = goal.name;
+        }
+        [cell.textField setEditable:NO];
+    }else{
+        [cell.textField setEditable:YES];
+        [cell.textField becomeFirstResponder];
+    }
+    
 }
 
 @end

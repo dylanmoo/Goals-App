@@ -25,6 +25,11 @@
 		FC1A3E1918301CE2003CC8E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1A3DF418301CE2003CC8E7 /* CoreData.framework */; };
 		FC1A3E2118301CE2003CC8E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC1A3E1F18301CE2003CC8E7 /* InfoPlist.strings */; };
 		FC1A3E2318301CE2003CC8E7 /* StepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E2218301CE2003CC8E7 /* StepTests.m */; };
+		FC1A3E371830BA28003CC8E7 /* StepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E361830BA28003CC8E7 /* StepCell.m */; };
+		FC1A3E3A1830BA31003CC8E7 /* GoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E391830BA31003CC8E7 /* GoalCell.m */; };
+		FC1A3E3D1830D1E1003CC8E7 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E3C1830D1E1003CC8E7 /* Goal.m */; };
+		FC1A3E401830D1E2003CC8E7 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E3F1830D1E2003CC8E7 /* Step.m */; };
+		FC1A3E4318316495003CC8E7 /* UIColor+RaftColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A3E4218316495003CC8E7 /* UIColor+RaftColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,16 @@
 		FC1A3E1E18301CE2003CC8E7 /* StepTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StepTests-Info.plist"; sourceTree = "<group>"; };
 		FC1A3E2018301CE2003CC8E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC1A3E2218301CE2003CC8E7 /* StepTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepTests.m; sourceTree = "<group>"; };
+		FC1A3E351830BA28003CC8E7 /* StepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepCell.h; sourceTree = "<group>"; };
+		FC1A3E361830BA28003CC8E7 /* StepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepCell.m; sourceTree = "<group>"; };
+		FC1A3E381830BA31003CC8E7 /* GoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalCell.h; sourceTree = "<group>"; };
+		FC1A3E391830BA31003CC8E7 /* GoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalCell.m; sourceTree = "<group>"; };
+		FC1A3E3B1830D1E1003CC8E7 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		FC1A3E3C1830D1E1003CC8E7 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		FC1A3E3E1830D1E2003CC8E7 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		FC1A3E3F1830D1E2003CC8E7 /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
+		FC1A3E4118316495003CC8E7 /* UIColor+RaftColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RaftColors.h"; sourceTree = "<group>"; };
+		FC1A3E4218316495003CC8E7 /* UIColor+RaftColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RaftColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +145,18 @@
 				FC1A3E0918301CE2003CC8E7 /* StepMasterViewController.m */,
 				FC1A3E0B18301CE2003CC8E7 /* StepDetailViewController.h */,
 				FC1A3E0C18301CE2003CC8E7 /* StepDetailViewController.m */,
+				FC1A3E351830BA28003CC8E7 /* StepCell.h */,
+				FC1A3E361830BA28003CC8E7 /* StepCell.m */,
+				FC1A3E381830BA31003CC8E7 /* GoalCell.h */,
+				FC1A3E391830BA31003CC8E7 /* GoalCell.m */,
 				FC1A3E0E18301CE2003CC8E7 /* Images.xcassets */,
+				FC1A3E4118316495003CC8E7 /* UIColor+RaftColors.h */,
+				FC1A3E4218316495003CC8E7 /* UIColor+RaftColors.m */,
 				FC1A3E0518301CE2003CC8E7 /* Step.xcdatamodeld */,
+				FC1A3E3E1830D1E2003CC8E7 /* Step.h */,
+				FC1A3E3F1830D1E2003CC8E7 /* Step.m */,
+				FC1A3E3B1830D1E1003CC8E7 /* Goal.h */,
+				FC1A3E3C1830D1E1003CC8E7 /* Goal.m */,
 				FC1A3DF718301CE2003CC8E7 /* Supporting Files */,
 			);
 			path = Step;
@@ -264,10 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1A3E3D1830D1E1003CC8E7 /* Goal.m in Sources */,
+				FC1A3E401830D1E2003CC8E7 /* Step.m in Sources */,
+				FC1A3E4318316495003CC8E7 /* UIColor+RaftColors.m in Sources */,
 				FC1A3E0A18301CE2003CC8E7 /* StepMasterViewController.m in Sources */,
+				FC1A3E371830BA28003CC8E7 /* StepCell.m in Sources */,
 				FC1A3E0118301CE2003CC8E7 /* StepAppDelegate.m in Sources */,
 				FC1A3DFD18301CE2003CC8E7 /* main.m in Sources */,
 				FC1A3E0D18301CE2003CC8E7 /* StepDetailViewController.m in Sources */,
+				FC1A3E3A1830BA31003CC8E7 /* GoalCell.m in Sources */,
 				FC1A3E0718301CE2003CC8E7 /* Step.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
